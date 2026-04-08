@@ -1,4 +1,4 @@
-import img from "./error.gif";
+import errorImg from "../errorMessage/error.gif";
 
 const ErrorMessage = () => {
   return (
@@ -10,7 +10,7 @@ const ErrorMessage = () => {
         objectFit: "contain",
         margin: "0 auto",
       }}
-      src={img}
+      src={errorImg}
       alt="Error"
     />
   );
