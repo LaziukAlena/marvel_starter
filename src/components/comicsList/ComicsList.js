@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import "./comicsList.scss";
 
 import useMarvelService from "../../services/MarvelService";
@@ -8,7 +8,7 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 
 const ComicsList = (props) => {
   const [comics, setComics] = useState([]);
-  const [offset, setOffset] = useState(1);
+  const [offset, setOffset] = useState(0);
   const [comicsEnded, setComicsEnded] = useState(false);
   const [newItemLoading, setNewItemLoading] = useState(false);
 
@@ -61,11 +61,11 @@ const ComicsListView = ({ comics }) => {
 
     return (
       <li key={id} className="comics__item">
-        <a href="#">
+        <Link to={`/comics/${id}`}>
           <img src={thumbnail} alt={title} className="comics__item-img" />
           <div className="comics__item-name">{title}</div>
           <div className="comics__item-price">{price}$</div>
-        </a>
+        </Link>
       </li>
     );
   });
